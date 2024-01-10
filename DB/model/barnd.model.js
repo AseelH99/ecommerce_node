@@ -1,6 +1,6 @@
 import mongoose,{Schema,model,Types} from "mongoose";
 
-const categorySchema = new Schema({
+const brandSchema = new Schema({
     name:{
         type:String,
         required:true,
@@ -28,13 +28,8 @@ const categorySchema = new Schema({
     },
 },{
     timestamps:true,
-    toJSON:{virtuals:true},
-    toObject:{virtuals:true},
+    
 });
-categorySchema.virtual('subcategory',{
-    localField:'_id',
-    foreignField:'categoryId',
-    ref:'SubCategory'
-})
-const categoryModel =mongoose.models.Category|| model('Category',categorySchema);
-export default categoryModel;
+
+const brandModel =mongoose.models.brand|| model('Brand',brandSchema);
+export default brandModel;

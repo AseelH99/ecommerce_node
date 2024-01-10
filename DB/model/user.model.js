@@ -19,6 +19,7 @@ const userSchema = new Schema({
     },
     image:{
         type:Object,
+        required:true,
 
     },
     phone:{
@@ -44,6 +45,13 @@ const userSchema = new Schema({
         type:String,
         default:'User',
         enum:['User','Admin'],
+    },
+    changePasswordTime:{
+        type:Date,
+    },
+    code:{
+        type:String,
+        default:null
     },
 },{
     timestamps:true,
